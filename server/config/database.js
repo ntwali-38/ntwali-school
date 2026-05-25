@@ -2,10 +2,10 @@ const mysql = require('mysql2');
 
 // Database configuration
 const dbConfig = {
-  host: 'localhost',
-  user: 'root', // Change this to your MySQL username
-  password: '', // Change this to your MySQL password
-  database: 'school_connect_rwanda'
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'school_connect_rwanda'
 };
 
 // Create connection pool
